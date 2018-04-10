@@ -33,6 +33,15 @@
       });
     }
 
+    vm.securedScopedPing = function() {
+      vm.message = '';
+      $http.get(API_URL + '/private-scoped').then(function(result) {
+        vm.message = result.data.message;
+      }, function(error) {
+        vm.message = error.data.message || error.data;
+      });
+    }
+
   }
 
 })();

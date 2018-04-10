@@ -5,16 +5,23 @@
 </p>
 
 <button
-  class="btn btn-primary" 
+  class="btn btn-primary"
   ng-click="vm.ping()">
     Call Public
 </button>
 
-<button 
+<button
   class="btn btn-primary"
-  ng-click="vm.securedPing()" 
+  ng-click="vm.securedPing()"
   ng-if="vm.auth.isAuthenticated()">
     Call Private
+</button>
+
+<button
+  class="btn btn-primary"
+  ng-click="vm.securedScopedPing()"
+  ng-if="vm.auth.isAuthenticated()">
+    Call Private Scoped
 </button>
 
 <h2>{{ vm.message }}</h2>
